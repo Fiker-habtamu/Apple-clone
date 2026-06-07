@@ -1,81 +1,57 @@
-import React from 'react'
-import logo from  "../commonResource/images/icons/logo-sm.png";
+import React from "react";
+import logo from "../commonResource/images/icons/logo-sm.png";
 import search from "../commonResource/images/icons/search-icon-sm.png";
 import cart from "../commonResource/images/icons/cart-sm.png";
-import '../commonResource/js/bootstrap'
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+
 function Header() {
   return (
     <>
-      <div className="nav-wrapper fixed-top">
-        <div className="container">
-          <nav className="navbar navbar-toggleable-sm navbar-expand-md">
-            <button
-              className="navbar-toggler navbar-toggler-right"
-              type="button"
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
-            >
-              ☰
-            </button>
-            <Link className="navbar-brand mx-auto" to="/">
-              <img src={logo} />
-            </Link>
-
-            <div className="navbar-collapse collapse">
-              <ul className="navbar-nav nav-justified w-100 nav-fill">
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/mac/">
-                    Mac
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/iphone/">
-                    iphone
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/ipad">
-                    ipad
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/watch/">
-                    Watch
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/tv/">
-                    tv
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/Music//">
-                    Music
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="Support">
-                    Support
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/search/">
-                    <img src={search} />
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link js-scroll-trigger" to="/cart/">
-                    <img src={cart} />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
+      <Navbar expand="lg" className="bg-dark sticky-top">
+        <Container className="p-20">
+          <Navbar.Brand as={Link} to="/" className="mr-5">
+            <img src={logo} />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link as={Link} to="/mac/" className="text-white mr-5">
+                Mac
+              </Nav.Link>
+              <Nav.Link as={Link} to="/iphone/" className="text-white mr-5">
+                iphone
+              </Nav.Link>
+              <Nav.Link as={Link} to="/ipad/" className="text-white mr-5">
+                ipad
+              </Nav.Link>
+              <Nav.Link as={Link} to="/watch/" className="text-white mr-5">
+                watch
+              </Nav.Link>
+              <Nav.Link as={Link} to="/tv/" className="text-white mr-5">
+                tv
+              </Nav.Link>
+              <Nav.Link as={Link} to="/Music/" className="text-white mr-5">
+                Music
+              </Nav.Link>
+              <Nav.Link as={Link} to="/Support/" className="text-white mr-5">
+                Support
+              </Nav.Link>
+              <Nav.Link as={Link} to="/search/" className="text-white mr-5">
+                <img src={search} />
+              </Nav.Link>
+              <Nav.Link as={Link} to="/cart/" className="text-white mr-5">
+                <img src={cart} />
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 }
 
-export default Header
+export default Header;

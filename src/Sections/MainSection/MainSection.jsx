@@ -18,7 +18,7 @@ function MainSection() {
       <Forthsection />
       <Fifthsection />
       <Sixthsection />
-      {/* <TheLastSecotion/> */}
+      <TheLastSecotion/>
     </>
   );
 }
