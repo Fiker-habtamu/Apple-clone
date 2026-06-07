@@ -1,30 +1,37 @@
-import React,{useState,useEffect} from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Iphone() {
-  const [products,setproducts] = useState([])
-  useEffect(() =>{
-      fetch("../../../iphones.json")
-        .then((res) => res.json())
-        .then((products) => {
-          setproducts(() => products.products);
-        });
-  },[])
-  
-  let flip = true
+  const [products, setproducts] = useState([]);
+  useEffect(() => {
+    fetch("/iphones.json")
+      .then((res) => res.json())
+      .then((data) => {
+        // Set the array data directly into state
+        setproducts(data.products);
+      })
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
+  console.log(products);
+
+  let flip = true;
   return (
     <>
       <section className="internal-page-wrapper top-100">
         <div className="row justify-content-center text-center">
           <div className="col-12">
-            <div className="title-wraper b
-            old">Iphones</div>
+            <div
+              className="title-wraper b
+            old"
+            >
+              Iphones
+            </div>
             <div className="brief-description">The best for the brightest.</div>
           </div>
         </div>
         {products.map((singleproduct) => {
-          // console.log(singleproduct);
+          console.log(singleproduct);
 
           let {
             description_id,
@@ -41,12 +48,12 @@ function Iphone() {
           } = singleproduct;
           let order1 = 1;
           let order2 = 2;
-          if(flip){
-              order1 = 2;
-              order2 = 1;
-              flip =!flip
-          } else{
-            flip = !flip
+          if (flip) {
+            order1 = 2;
+            order2 = 1;
+            flip = !flip;
+          } else {
+            flip = !flip;
           }
 
           let productDiv = (
@@ -76,12 +83,11 @@ function Iphone() {
               </div>
             </div>
           );
-         return productDiv;
+          return productDiv;
         })}
-        
       </section>
     </>
   );
 }
 
-export default Iphone
+export default Iphone;
