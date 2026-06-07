@@ -22,28 +22,28 @@ function Header() {
               <Nav.Link as={Link} to="/mac/" className="text-white mr-5">
                 Mac
               </Nav.Link>
-              <Nav.Link as={Link} to="/iphone/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/iphone" className="text-white mr-5">
                 iphone
               </Nav.Link>
-              <Nav.Link as={Link} to="/ipad/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/ipad" className="text-white mr-5">
                 ipad
               </Nav.Link>
-              <Nav.Link as={Link} to="/watch/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/watch" className="text-white mr-5">
                 watch
               </Nav.Link>
-              <Nav.Link as={Link} to="/tv/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/tv" className="text-white mr-5">
                 tv
               </Nav.Link>
-              <Nav.Link as={Link} to="/Music/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/Music" className="text-white mr-5">
                 Music
               </Nav.Link>
-              <Nav.Link as={Link} to="/Support/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/Support" className="text-white mr-5">
                 Support
               </Nav.Link>
-              <Nav.Link as={Link} to="/search/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/search" className="text-white mr-5">
                 <img src={search} />
               </Nav.Link>
-              <Nav.Link as={Link} to="/cart/" className="text-white mr-5">
+              <Nav.Link as={Link} to="/cart" className="text-white mr-5">
                 <img src={cart} />
               </Nav.Link>
             </Nav>
